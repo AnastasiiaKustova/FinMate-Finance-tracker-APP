@@ -58,3 +58,9 @@ With clear charts, detailed history, and flexible customization, you always know
 7. **View balance and history**  
    - Home screen shows your total balance, balances per account, and recent transactions  
    - Full history: filter by period, type (income/expense), or category  
+
+## License
+This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License.
+See the [LICENSE](LICENSE) file for details.
+
+Commercial use is prohibited. If you are interested in commercial licensing, please contact the author.
