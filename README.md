@@ -1,4 +1,4 @@
-# FinMate-APP
+# FinMate / Finance tracker APP
 Simple and smart personal finance tracker with budgeting and statistics
 
 Finance Tracker helps you create accounts, categorize your income and expenses, track your balance, and plan your budget.  
