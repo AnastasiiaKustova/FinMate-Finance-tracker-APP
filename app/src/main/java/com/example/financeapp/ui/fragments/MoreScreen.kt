@@ -9,6 +9,7 @@ import com.example.financeapp.R
 import com.example.financeapp.ui.fragments.allList.AllCardsList
 import com.example.financeapp.ui.fragments.allList.AllCategoriesList
 import com.example.financeapp.databinding.FragmentMoreScreenBinding
+import com.example.financeapp.utils.StringNames
 
 class MoreScreen : Fragment() {
 
@@ -50,6 +51,8 @@ class MoreScreen : Fragment() {
             .getPackageInfo(requireContext().packageName, 0)
         val versionName = packageInfo.versionName
 
-        binding.appInfo.text = "Версия: $versionName"
+        val stringNames = StringNames(requireContext())
+
+        binding.appInfo.text = "${stringNames.VERSION}: $versionName"
     }
 }

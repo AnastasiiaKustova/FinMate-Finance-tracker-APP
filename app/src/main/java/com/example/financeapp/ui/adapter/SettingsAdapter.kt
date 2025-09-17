@@ -18,9 +18,9 @@ class SettingsAdapter(private var items: List<SettingsItemClass>) : RecyclerView
             titleText.text = item.title
 
             if (selectedItems.contains(item)) {
-                titleText.setBackgroundResource(R.drawable.rounded_shape_selected) // твой drawable с цветом выделения
+                titleText.setBackgroundResource(R.drawable.rounded_shape_selected)
             } else {
-                titleText.setBackgroundResource(R.drawable.rounded_shape)   // обычный фон
+                titleText.setBackgroundResource(R.drawable.rounded_shape)
             }
 
             layout.setOnClickListener {
@@ -29,9 +29,8 @@ class SettingsAdapter(private var items: List<SettingsItemClass>) : RecyclerView
                 } else {
                     selectedItems.add(item)
                 }
-                notifyItemChanged(adapterPosition) // перерисовать этот элемент
+                notifyItemChanged(adapterPosition)
 
-                // отдать наружу обновлённый список
                 onItemClick?.invoke(item)
             }
         }

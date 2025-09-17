@@ -9,7 +9,7 @@
         android:id="@+id/itemLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:cardBackgroundColor="@color/transparent"
+        app:cardBackgroundColor="@color/BG"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
