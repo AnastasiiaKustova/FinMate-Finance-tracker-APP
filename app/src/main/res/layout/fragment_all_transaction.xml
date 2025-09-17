@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.allList.AllTransaction">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+        <FrameLayout
+            style="@style/HeaderLayout"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="12dp">
+
+            <ImageView
+                style="@style/ButtonBack"
+                android:id="@+id/backButton"/>
+
+            <TextView
+                style="@style/CenterTitle"
+                android:id="@+id/title"
+                android:text="@string/transaction_history" />
+
+            <ImageView
+                style="@style/ButtonSettings"
+                android:id="@+id/settingsButton" />
+        </FrameLayout>
+
+        <TextView
+            style="@style/DateRange"
+            android:id="@+id/datePeriod"
+            android:layout_marginTop="8dp"/>
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupTypes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginBottom="0dp"
+            app:chipSpacingHorizontal="8dp"
+            app:chipSpacingVertical="-6dp"
+            app:singleLine="false"
+            app:singleSelection="false">
+        </com.google.android.material.chip.ChipGroup>
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupCategories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginBottom="8dp"
+            app:chipSpacingHorizontal="8dp"
+            app:chipSpacingVertical="-6dp"
+            app:singleLine="false"
+            app:singleSelection="false">
+        </com.google.android.material.chip.ChipGroup>
+
+        <LinearLayout
+            style="@style/RoundedGreyLayoutNoTopMargin">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="20dp"
+                android:paddingTop="20dp">
+
+                <TextView
+                    android:id="@+id/balanceText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/total"
+                    android:textSize="20sp"
+                    android:paddingEnd="8dp"
+                    tools:ignore="RtlSymmetry" />
+
+                <TextView
+                    android:id="@+id/balance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/card_balance_hint"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/Explanation"
+                android:id="@+id/noTransactionInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/transaction_not_found" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/operationList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

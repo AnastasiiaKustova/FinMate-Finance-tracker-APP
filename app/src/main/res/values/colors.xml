@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="LightWhite">#E8EAED</color>
+    <color name="White">#DDE1E3</color>
+    <color name="White60">#99C6C8CA</color>
+    <color name="Hint">#A4AFB8</color>
+    <color name="LightGrey">#515761</color>
+    <color name="Grey">#2B2D33</color>
+    <color name="Grey60">#99302D38</color>
+    <color name="GreyForLine">#9949454F</color>
+    <color name="BG">#17191C</color>
+    <color name="BG60">#9917191C</color>
+    <color name="Primary">#90342B</color>
+    <color name="Red">#C74236</color>
+    <color name="Black">#000000</color>
+
+    <color name="d">#1A1B1F</color>
+
+    <color name="ds">#302D38</color>
+    <color name="dsw">#C6C8CA</color>
+    <color name="dsp">#A8443B</color>
+    <color name="chek">#3D1E83</color>
+    <color name="chek2">#998F342B</color>
+
+    <color name="chek3">#37393F</color>
+
+
+    <color name="transparent">@android:color/transparent</color>
+</resources>

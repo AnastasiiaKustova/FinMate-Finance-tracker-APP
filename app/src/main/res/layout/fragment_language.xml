@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rounded_shape"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/TitleHuge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/more_screen_language"
+        android:padding="20dp" />
+
+    <ImageView
+        style="@style/SeparatorLine"
+        android:id="@+id/separator_line" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/Default"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/White"
+                android:textSize="16sp"
+                android:tag="default"
+                android:text="@string/language_Default" />
+
+            <RadioButton
+                android:id="@+id/Ru"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/White"
+                android:textSize="16sp"
+                android:tag="ru"
+                android:text="@string/language_RU" />
+
+            <RadioButton
+                android:id="@+id/Eng"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/White"
+                android:textSize="16sp"
+                android:tag="en"
+                android:text="@string/language_Eng" />
+
+        </RadioGroup>
+
+        <Button
+            style="@style/ButtonMain"
+            android:id="@+id/saveButton"
+            android:text="@string/save_btn"/>
+    </LinearLayout>
+
+</LinearLayout>

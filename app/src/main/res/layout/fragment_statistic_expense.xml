@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="12dp"
+    tools:context=".ui.fragments.statistic.StatisticExpense">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+        <TextView
+            style="@style/DateRange"
+            android:id="@+id/datePeriod"
+            android:layout_marginTop="0dp"/>
+
+        <LinearLayout
+            android:id="@+id/pieChartLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="4dp"
+            android:orientation="vertical"
+            android:paddingHorizontal="12dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp">
+
+                <TextView
+                    android:id="@+id/centerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:scaleType="centerInside"
+                    android:visibility="visible"/>
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/pieChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <ImageView
+                    android:id="@+id/centerIcon"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:scaleX="2"
+                    android:scaleY="2"
+                    android:layout_gravity="center"
+                    android:scaleType="centerInside"
+                    android:visibility="gone"/>
+
+                <com.example.financeapp.ui.common.RadialOverlayView
+                    android:id="@+id/radialOverlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </FrameLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/Explanation"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:id="@+id/noTransactionInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/transaction_not_found"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/categoryList"/>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

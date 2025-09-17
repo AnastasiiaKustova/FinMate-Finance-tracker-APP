@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.fragments.info.TransactionInfo">
+
+    <FrameLayout
+        style="@style/HeaderLayout"
+        android:layout_margin="12dp"
+        android:background="@drawable/rounded_shape"
+        android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/backBtn"
+            style="@style/ButtonBack" />
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/CenterTitle"
+            android:ellipsize="end"
+            android:maxWidth="250dp"
+            android:maxLines="1" />
+
+        <ImageView
+            android:id="@+id/editOrDeleteBtn"
+            style="@style/ButtonEdit" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/infoLayout"
+        style="@style/RoundedGreyLayoutNoTopMargin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TitleForEditText"
+                    android:text="@string/transaction_date" />
+
+                <TextView
+                    android:id="@+id/date"
+                    style="@style/BodyText" />
+
+                <TextView
+                    style="@style/TitleForEditText"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/transaction_money" />
+
+                <TextView
+                    android:id="@+id/balance"
+                    style="@style/BodyText" />
+
+                <TextView
+                    android:id="@+id/cardText"
+                    style="@style/TitleForEditText"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/card_from" />
+
+                <TextView
+                    android:id="@+id/card"
+                    style="@style/BodyText" />
+
+                <LinearLayout
+                    android:id="@+id/cardToLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TitleForEditText"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/card_to" />
+
+                    <TextView
+                        android:id="@+id/cardTo"
+                        style="@style/BodyText" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/categoryLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TitleForEditText"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/category" />
+
+                    <TextView
+                        android:id="@+id/category"
+                        style="@style/BodyText" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/TitleForEditText"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/operation_type" />
+
+                <TextView
+                    android:id="@+id/type"
+                    style="@style/BodyText" />
+
+                <TextView
+                    style="@style/TitleForEditText"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/comment" />
+
+                <TextView
+                    android:id="@+id/comment"
+                    style="@style/BodyText" />
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/deleteBtn"
+            style="@style/ButtonMain"
+            android:text="@string/delete_btn" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/editLayout"
+        style="@style/RoundedGreyLayoutNoTopMargin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TitleForEditText"
+                    android:text="@string/transaction_date" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/icCalendar"
+                        style="@style/CalendarIcon" />
+
+                    <TextView
+                        android:id="@+id/editDateText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/TitleForEditText"
+                    android:layout_marginTop="0dp"
+                    android:text="@string/transaction_money" />
+
+                <EditText
+                    android:id="@+id/moneyEditText"
+                    style="@style/TextEditText"
+                    android:layout_marginTop="8dp"
+                    android:hint="@string/balance_hint"
+                    android:inputType="number"
+                    android:paddingHorizontal="8dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        style="@style/TitleForEditText"
+                        android:text="@string/operation_card" />
+
+                    <ImageButton
+                        android:id="@+id/addTypeBtn"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent"
+                        android:contentDescription="@string/card_new_icon"
+                        android:scaleX="0.7"
+                        android:scaleY="0.7"
+                        android:src="@drawable/ic_add" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/noTypeInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/transparent"
+                    android:text="@string/card_not_found"
+                    android:textColor="@color/Hint" />
+
+                <Spinner
+                    android:id="@+id/spinnerType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:minHeight="48dp" />
+
+                <TextView
+                    style="@style/TitleForEditText"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/category" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/itemsCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp" />
+
+                <Spinner
+                    android:id="@+id/spinnerCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/operationText"
+                    style="@style/TitleForEditText"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/operation_type" />
+
+                <RadioGroup
+                    android:id="@+id/operationSelector"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/expense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/expenseTitle"
+                        android:tag="expense"
+                        android:textColor="@color/White"
+                        android:textSize="16sp" />
+
+                    <RadioButton
+                        android:id="@+id/admission"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/admissionTitle"
+                        android:tag="admission"
+                        android:textColor="@color/White"
+                        android:textSize="16sp" />
+                </RadioGroup>
+
+                <TextView
+                    style="@style/TitleForEditText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/comment" />
+
+                <EditText
+                    android:id="@+id/commentEditText"
+                    style="@style/TextEditText"
+                    android:layout_marginTop="8dp"
+                    android:hint="@string/comment_hint"
+                    android:paddingHorizontal="8dp" />
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/saveButton"
+            style="@style/ButtonMain"
+            android:text="@string/save_btn" />
+    </LinearLayout>
+</LinearLayout>

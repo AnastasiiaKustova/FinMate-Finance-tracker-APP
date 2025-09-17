@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ButtonIcon32x32">
+        <item name="android:layout_width">32dp</item>
+        <item name="android:layout_height">32dp</item>
+    </style>
+
+    <style name="ButtonStart32x32" parent="ButtonIcon32x32">
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+    <style name="ButtonEnd32x32" parent="ButtonIcon32x32">
+        <item name="android:layout_gravity">center_vertical|end</item>
+    </style>
+
+    <style name="ButtonIcon24x24">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+    </style>
+
+    <style name="ButtonStart24x24" parent="ButtonIcon24x24">
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+    <style name="ButtonEnd24x24" parent="ButtonIcon24x24">
+        <item name="android:layout_gravity">center_vertical|end</item>
+    </style>
+
+    <style name="ButtonBack" parent="ButtonStart32x32">
+        <item name="android:scaleX">1.5</item>
+        <item name="android:scaleY">1.5</item>
+        <item name="android:src">@drawable/ic_button_back</item>
+        <item name="android:contentDescription">@string/back_btn</item>
+    </style>
+
+    <style name="ButtonLeft" parent="ButtonStart24x24">
+        <item name="android:tint">@color/White</item>
+        <item name="android:scaleX">1</item>
+        <item name="android:scaleY">1</item>
+        <item name="android:src">@drawable/ic_button_back</item>
+    </style>
+
+    <style name="ButtonRight" parent="ButtonEnd24x24">
+        <item name="android:tint">@color/White</item>
+        <item name="android:rotation">180</item>
+        <item name="android:scaleX">1</item>
+        <item name="android:scaleY">1</item>
+        <item name="android:src">@drawable/ic_button_back</item>
+    </style>
+
+    <style name="ButtonDelete" parent="ButtonEnd32x32">
+        <item name="android:src">@drawable/ic_delete</item>
+        <item name="android:contentDescription">@string/delete_btn</item>
+    </style>
+
+    <style name="ButtonEdit" parent="ButtonEnd32x32">
+        <item name="android:src">@drawable/ic_edit</item>
+        <item name="android:contentDescription">@string/edit_btn</item>
+    </style>
+
+
+
+    <style name="ButtonSettings" parent="ButtonEnd32x32">
+        <item name="android:scaleX">1</item>
+        <item name="android:scaleY">1</item>
+        <item name="android:src">@drawable/ic_button_settings</item>
+        <item name="android:contentDescription">@string/transaction_settings_icon</item>
+    </style>
+
+    <style name="ButtonAdd">
+        <item name="android:layout_width">32dp</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:layout_gravity">center_vertical|end</item>
+        <item name="android:src">@drawable/ic_button_add</item>
+        <item name="android:scaleX">1.2</item>
+        <item name="android:scaleY">1.2</item>
+    </style>
+
+    <style name="ButtonMain">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:background">@drawable/button</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:minHeight">60dp</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+
+    <style name="CalendarIcon">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:background">@color/transparent</item>
+        <item name="android:contentDescription">@string/operation_date_icon</item>
+        <item name="android:src">@drawable/ic_calendar</item>
+    </style>
+
+</resources>

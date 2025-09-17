@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp"
+    tools:context=".ui.fragments.Home"
+    tools:ignore="UselessParent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_shape"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="20dp"
+            android:paddingStart="20dp"
+            android:weightSum="10">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="8.4"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/balanceText"
+                    style="@style/TitleMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/balance"
+                    android:textColor="@color/White60" />
+
+                <TextView
+                    android:id="@+id/balance"
+                    style="@style/TitleLarge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/card_balance_hint" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/showDetailsBtn"
+                style="@style/ImageButton"
+                android:layout_width="0dp"
+                android:layout_weight="1.6"
+                android:contentDescription="@string/no_description"
+                android:src="@drawable/ic_buttonup" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/balanceDetails"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/separator_line"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:contentDescription="@string/no_description"
+                android:src="@drawable/separator_line" />
+
+            <TextView
+                android:id="@+id/noCardInfo"
+                style="@style/Explanation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/card_not_found_with_description" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/itemsBalance"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="20dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <Button
+                    android:id="@+id/addCardBtn"
+                    style="@style/ButtonWithText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_add"
+                    android:text="@string/add_card" />
+
+                <Button
+                    android:id="@+id/switchCardBtn"
+                    style="@style/ButtonWithText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_switch_money"
+                    android:text="@string/add_card_transaction" />
+
+                <Button
+                    android:id="@+id/historyBtn"
+                    style="@style/ButtonWithText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_history"
+                    android:text="@string/card_history" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/rounded_shape"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="20dp"
+            android:paddingBottom="4dp">
+
+            <TextView
+                android:id="@+id/recentTransaction"
+                style="@style/TitleMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/transaction_recent" />
+
+            <TextView
+                android:id="@+id/more"
+                style="@style/TitleMediumEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/all" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/separator_line2"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:contentDescription="@string/no_description"
+            android:src="@drawable/separator_line" />
+
+        <TextView
+            android:id="@+id/noTransactionInfo"
+            style="@style/Explanation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/transaction_not_found_with_description"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/operationList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

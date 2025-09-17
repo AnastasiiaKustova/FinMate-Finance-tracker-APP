@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    style="@style/RoundedGreyLayout"
+    tools:context=".ui.fragments.add.AddTransaction">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <EditText
+            android:id="@+id/moneyText"
+            style="@style/NumberEditText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textCurrency"
+            style="@style/CurrencyText"
+            app:layout_constraintBottom_toBottomOf="@+id/moneyText"
+            app:layout_constraintStart_toEndOf="@+id/moneyText"
+            app:layout_constraintTop_toTopOf="@+id/moneyText" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView style="@style/SeparatorLine" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                style="@style/TitleForEditText"
+                android:id="@+id/operationText"
+                android:text="@string/operation_type"/>
+
+            <RadioGroup
+                android:id="@+id/operationSelector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/expense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:tag="expense"
+                    android:text="@string/expenseTitle"
+                    android:textColor="@color/White"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/admission"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:tag="admission"
+                    android:text="@string/admissionTitle"
+                    android:textColor="@color/White"
+                    android:textSize="16sp" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/categoryText"
+                style="@style/TitleForEditText"
+                android:text="@string/category"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/itemsCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <Spinner
+                android:id="@+id/spinnerCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp">
+
+                <TextView
+                    style="@style/TitleForEditText"
+                    android:id="@+id/typeText"
+                    android:text="@string/operation_card" />
+
+                <ImageButton
+                    android:id="@+id/addTypeBtn"
+                    android:layout_width="48dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/transparent"
+                    android:contentDescription="@string/card_new_icon"
+                    android:scaleX="0.7"
+                    android:scaleY="0.7"
+                    android:src="@drawable/ic_add" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/noTypeInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/transparent"
+                android:text="@string/card_not_found"
+                android:textColor="@color/Hint"
+                android:visibility="gone"/>
+
+            <Spinner
+                android:id="@+id/spinnerType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp" />
+
+
+            <TextView
+                style="@style/TitleForEditText"
+                android:id="@+id/dateText"
+                android:layout_marginTop="8dp"
+                android:text="@string/operation_date"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    style="@style/CalendarIcon"
+                    android:id="@+id/icCalendar" />
+
+                <TextView
+                    android:id="@+id/editDateText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+
+            <TextView
+                style="@style/TitleForEditText"
+                android:id="@+id/commentText"
+                android:layout_marginTop="12dp"
+                android:text="@string/comment"/>
+
+            <EditText
+                style="@style/TextEditText"
+                android:id="@+id/comment"
+                android:layout_marginTop="8dp"
+                android:hint="@string/comment_hint"
+                android:paddingHorizontal="8dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        style="@style/ButtonMain"
+        android:id="@+id/addButton"
+        android:text="@string/create_btn"
+        android:layout_margin="20dp" />
+
+</LinearLayout>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.fragments.info.PlanningInfo">
+
+    <FrameLayout
+        style="@style/HeaderLayout"
+        android:layout_margin="12dp"
+        android:background="@drawable/rounded_shape"
+        android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/backBtn"
+            style="@style/ButtonBack" />
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/CenterTitle"
+            android:ellipsize="end"
+            android:maxWidth="250dp"
+            android:maxLines="1" />
+
+        <ImageView
+            android:id="@+id/editOrDeleteBtn"
+            style="@style/ButtonEdit" />
+    </FrameLayout>
+
+
+    <LinearLayout
+        style="@style/RoundedGreyLayoutNoTopMargin"
+        android:padding="20dp">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="20dp"
+            android:progress="10"
+            android:progressDrawable="@drawable/progress_bar"
+            android:scaleY="1.5" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/spentValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="@string/card_balance_hint"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/spentText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/spent"
+                    android:textColor="@color/White60"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/remainderValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:gravity="end"
+                    android:text="@string/card_balance_hint"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/remainderText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="@string/remainder"
+                    android:textColor="@color/White60"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/infoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TitleForEditText"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/planning_money" />
+
+                    <TextView
+                        android:id="@+id/balance"
+                        style="@style/BodyText"
+                        android:layout_marginTop="8dp" />
+
+                    <TextView
+                        style="@style/TitleForEditText"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/planning_date" />
+
+                    <TextView
+                        android:id="@+id/date"
+                        style="@style/BodyText"
+                        android:layout_marginTop="8dp" />
+
+                    <TextView
+                        style="@style/TitleForEditText"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/comment" />
+
+                    <TextView
+                        android:id="@+id/comment"
+                        style="@style/BodyText"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+            </ScrollView>
+
+            <Button
+                android:id="@+id/deleteBtn"
+                style="@style/ButtonMain"
+                android:text="@string/delete_btn" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/editLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TitleForEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/planning_money" />
+
+                    <EditText
+                        android:id="@+id/balanceEditText"
+                        style="@style/TextEditText"
+                        android:layout_marginTop="8dp"
+                        android:hint="@string/planning_money_hint"
+                        android:paddingHorizontal="8dp" />
+
+                    <TextView
+                        android:layout_marginTop="12dp"
+                        android:id="@+id/categoryText"
+                        style="@style/TitleForEditText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/category" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/itemsCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp" />
+
+                    <TextView
+                        style="@style/TitleForEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/planning_date" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+                            android:id="@+id/icCalendar"
+                            style="@style/CalendarIcon" />
+
+                        <TextView
+                            android:id="@+id/editDateText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/TitleForEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/comment" />
+
+                    <EditText
+                        android:id="@+id/commentEditText"
+                        style="@style/TextEditText"
+                        android:layout_marginTop="8dp"
+                        android:hint="@string/comment_hint"
+                        android:paddingHorizontal="8dp" />
+                </LinearLayout>
+            </ScrollView>
+
+            <Button
+                android:id="@+id/saveBtn"
+                style="@style/ButtonMain"
+                android:text="@string/save_btn" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

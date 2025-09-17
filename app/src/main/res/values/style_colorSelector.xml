@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MyColorPickerTheme" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="android:buttonBarPositiveButtonStyle">@style/MyPositiveButton</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/MyNegativeButton</item>
+
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:background">@color/Grey</item>
+    </style>
+
+    <style name="MyPositiveButton" parent="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/White</item>
+    </style>
+
+    <style name="MyNegativeButton" parent="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/White</item>
+    </style>
+</resources>

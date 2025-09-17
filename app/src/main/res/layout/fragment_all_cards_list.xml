@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.fragments.allList.AllCardsList">
+
+    <FrameLayout
+        style="@style/HeaderLayout"
+        android:padding="12dp">
+        <ImageView
+            style="@style/ButtonBack"
+            android:id="@+id/backButton"/>
+
+        <TextView
+            style="@style/CenterTitle"
+            android:id="@+id/title"
+            android:text="@string/all_card" />
+
+        <ImageView
+            style="@style/ButtonAdd"
+            android:id="@+id/addCardBtn"
+            android:contentDescription="@string/card_new_icon" />
+    </FrameLayout>
+
+    <LinearLayout
+        style="@style/RoundedGreyLayoutNoTopMargin">
+
+        <TextView
+            style="@style/Explanation"
+            android:id="@+id/emptyText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/card_not_created" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/dataList"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</LinearLayout>

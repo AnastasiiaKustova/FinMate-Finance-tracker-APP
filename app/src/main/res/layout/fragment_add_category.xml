@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/RoundedGreyLayout"
+    tools:context=".ui.fragments.add.AddOrEditCategory">
+
+    <FrameLayout
+        style="@style/HeaderLayout"
+        android:padding="20dp">
+
+        <ImageView
+            android:id="@+id/backBtn"
+            style="@style/ButtonBack" />
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/CenterTitle"
+            android:text="@string/new_category" />
+
+        <TextView
+            android:id="@+id/titleUpdate"
+            style="@style/CenterTitle"
+            android:text="@string/edit_category"
+            android:visibility="gone" />
+
+        <ImageView
+            style="@style/ButtonDelete"
+            android:id="@+id/deleteBtn"
+            app:tint="@color/Red"
+            android:visibility="gone"/>
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/separator_line"
+        style="@style/SeparatorLine" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                style="@style/TitleForEditText"
+                android:text="@string/category_name" />
+
+            <EditText
+                style="@style/TextEditText"
+                android:id="@+id/titleText"
+                android:layout_marginTop="10dp"
+                android:autofillHints=""
+                android:hint="@string/category_name_add"
+                android:paddingHorizontal="8dp"
+                tools:ignore="LabelFor" />
+
+            <TextView
+                android:id="@+id/operationText"
+                style="@style/TitleForEditText"
+                android:layout_marginTop="20dp"
+                android:text="@string/operation_type" />
+
+            <RadioGroup
+                android:id="@+id/operationSelector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/expense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:tag="expense"
+                    android:text="@string/expenseTitle"
+                    android:textColor="@color/White"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/admission"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:tag="admission"
+                    android:text="@string/admissionTitle"
+                    android:textColor="@color/White"
+                    android:textSize="16sp" />
+            </RadioGroup>
+
+            <TextView
+                style="@style/TitleForEditText"
+                android:layout_marginTop="16dp"
+                android:text="@string/category_icon" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/itemCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:isScrollContainer="true"
+                android:scrollbars="horizontal" />
+
+            <TextView
+                style="@style/TitleForEditText"
+                android:layout_marginTop="16dp"
+                android:text="@string/category_color" />
+
+            <TextView
+                android:id="@+id/colorSelectBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_text_field"
+                android:paddingVertical="13dp" />
+        </LinearLayout>
+    </ScrollView>
+    <Button
+        style="@style/ButtonMain"
+        android:id="@+id/saveButton"
+        android:text="@string/create_btn"
+        android:layout_margin="20dp"/>
+</LinearLayout>

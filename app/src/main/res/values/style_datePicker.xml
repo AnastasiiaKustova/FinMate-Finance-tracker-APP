@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomThemeOverlay_MaterialCalendar_DatePicker" parent="@style/ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="materialCalendarStyle">@style/Custom_MaterialCalendar</item>
+        <item name="materialCalendarHeaderTitle">@style/customHeaderTitle</item>
+        <item name="materialCalendarHeaderSelection">@style/CustomHeaderSelection_DatePicker</item>
+        <item name="textInputStyle">@style/CustomDateInput</item>
+        <item name="buttonBarPositiveButtonStyle">@style/ButtonsPositive</item>
+        <item name="buttonBarNegativeButtonStyle">@style/ButtonsNegative</item>
+
+        <item name="android:textColorPrimary">@color/White</item>
+        <item name="colorPrimary">@color/BG60</item>
+        <item name="colorSurface">@color/BG</item>
+        <item name="colorOnSurface">@color/White</item>
+        <item name="colorOnPrimary">@color/White</item>
+        <item name="colorError">@color/Red</item>
+    </style>
+
+    <style name="CustomHeaderSelection_DatePicker" parent="Widget.MaterialComponents.MaterialCalendar.HeaderSelection">
+        <item name="android:textColor">@color/White</item>
+    </style>
+
+</resources>

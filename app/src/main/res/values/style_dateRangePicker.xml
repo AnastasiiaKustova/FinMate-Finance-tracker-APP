@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomThemeOverlay_MaterialCalendar" parent="@style/ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="materialCalendarStyle">@style/Custom_MaterialCalendar</item>
+        <item name="materialCalendarHeaderTitle">@style/customHeaderTitle</item>
+        <item name="materialCalendarHeaderSelection">@style/CustomHeaderSelection</item>
+        <item name="textInputStyle">@style/CustomDateInput</item>
+        <item name="buttonBarPositiveButtonStyle">@style/ButtonsPositive</item>
+        <item name="buttonBarNegativeButtonStyle">@style/ButtonsNegative</item>
+
+        <item name="android:textColorPrimary">@color/White</item>
+        <item name="colorPrimary">@color/BG60</item>
+        <item name="colorSurface">@color/BG</item>
+        <item name="colorOnSurface">@color/White</item>
+        <item name="colorOnPrimary">@color/White</item>
+        <item name="colorError">@color/Red</item>
+    </style>
+
+    <style name="Custom_MaterialCalendar" parent="@style/Widget.MaterialComponents.MaterialCalendar">
+        <item name="android:windowFullscreen">false</item>
+        <item name="rangeFillColor">@color/chek2</item>
+        <item name="dayStyle">@style/CustomWidget_Day</item>
+        <item name="daySelectedStyle">@style/CustomSelected</item>
+    </style>
+
+    <style name="customHeaderTitle" parent="@style/Widget.MaterialComponents.MaterialCalendar.HeaderTitle">
+        <item name="android:textColor">@color/White</item>
+        <item name="colorSurface">@color/Red</item>
+    </style>
+
+    <style name="CustomHeaderSelection" parent="Widget.MaterialComponents.MaterialCalendar.HeaderSelection">
+        <item name="android:textColor">@color/White</item>
+        <item name="android:layout_gravity">bottom</item>
+    </style>
+
+    <style name="CustomWidget_Day" parent="Widget.MaterialComponents.MaterialCalendar.Day">
+        <item name="android:textSize">18sp</item>
+        <item name="itemTextColor">@color/White</item>
+    </style>
+
+    <style name= "CustomSelected" parent="Widget.MaterialComponents.MaterialCalendar.Day.Selected">
+        <item name="itemFillColor">@color/Primary</item>
+        <item name="itemStrokeWidth">2dp</item>
+        <item name="itemStrokeColor">@color/Primary</item>
+    </style>
+
+    <style name="ButtonsPositive" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/White</item>
+    </style>
+
+    <style name="ButtonsNegative" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/White60</item>
+    </style>
+
+    <style name="CustomDateInput" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/White60</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="android:textColorHint">@color/White60</item>
+        <item name="hintTextColor">@color/White</item>
+    </style>
+
+</resources>

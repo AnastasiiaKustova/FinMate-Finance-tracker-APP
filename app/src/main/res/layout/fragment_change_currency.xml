@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rounded_shape"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/TitleHuge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/more_screen_currency"
+        android:padding="20dp"/>
+
+    <ImageView
+        style="@style/SeparatorLine"
+        android:id="@+id/separator_line"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/RUB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/White"
+                android:textSize="16sp"
+                android:tag="RUB"
+                android:text="@string/currency_RUB" />
+
+            <RadioButton
+                android:id="@+id/USD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/White"
+                android:textSize="16sp"
+                android:tag="USD"
+                android:text="@string/currency_USD" />
+
+            <RadioButton
+                android:id="@+id/EUR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/White"
+                android:textSize="16sp"
+                android:tag="EUR"
+                android:text="@string/currency_EUR" />
+
+            <RadioButton
+                android:id="@+id/BYN"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/White"
+                android:textSize="16sp"
+                android:tag="BYN"
+                android:text="@string/currency_BYN" />
+
+            <RadioButton
+                android:id="@+id/UAH"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/White"
+                android:textSize="16sp"
+                android:tag="UAH"
+                android:text="@string/currency_UAH" />
+
+            <RadioButton
+                android:id="@+id/KZT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/White"
+                android:textSize="16sp"
+                android:tag="KZT"
+                android:text="@string/currency_KZT" />
+
+        </RadioGroup>
+
+        <Button
+            style="@style/ButtonMain"
+            android:id="@+id/saveButton"
+            android:text="@string/save_btn"/>
+    </LinearLayout>
+</LinearLayout>

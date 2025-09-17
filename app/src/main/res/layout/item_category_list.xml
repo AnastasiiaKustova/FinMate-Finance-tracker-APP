@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        app:cardBackgroundColor="@color/transparent"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="12dp">
+
+            <FrameLayout
+                android:id="@+id/iconColor"
+                style="@style/IconFrameSmall">
+                <ImageView
+                    android:id="@+id/icon"
+                    style="@style/Icon"
+                    android:contentDescription="@string/category_icon"
+                    tools:srcCompat="@tools:sample/avatars" />
+            </FrameLayout>
+
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="65"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingStart="16dp"
+                android:textSize="20sp"
+                tools:ignore="RtlSymmetry" />
+
+            <ImageView
+                style="@style/ButtonEdit"
+                android:id="@+id/edit_Btn"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

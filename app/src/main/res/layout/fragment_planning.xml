@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.allList.AllPlannings">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+        <FrameLayout
+            style="@style/HeaderLayout"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="12dp">
+
+            <TextView
+                style="@style/CenterTitle"
+                android:id="@+id/textView2"
+                android:text="@string/planning_title" />
+
+            <ImageView
+                style="@style/ButtonAdd"
+                android:id="@+id/addPlanningBtn"
+                android:contentDescription="@string/planning_new_icon" />
+        </FrameLayout>
+        <TextView
+            style="@style/DateRange"
+            android:id="@+id/datePeriod"
+            android:layout_marginTop="8dp"/>
+        <TextView
+            style="@style/Explanation"
+            android:id="@+id/noTransactionInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/planning_not_found"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="4dp"
+            android:id="@+id/itemList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</FrameLayout>
