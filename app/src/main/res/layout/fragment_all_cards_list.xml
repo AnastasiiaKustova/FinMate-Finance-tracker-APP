@@ -36,9 +36,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/dataList"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="20dp"
+            android:layout_margin="20dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>

@@ -148,7 +148,9 @@ class StatisticExpense : Fragment() {
     private fun setOperations(){
         operationViewModel.operations.observe(viewLifecycleOwner){operations ->
 
-            adapter.updateItems(operations, money)
+            val sortedOperations = operations.sortedByDescending { it.info.money }
+
+            adapter.updateItems(sortedOperations, money)
 
             if (operations.isNotEmpty()) {
                 binding.noTransactionInfo.visibility = View.GONE
@@ -158,7 +160,7 @@ class StatisticExpense : Fragment() {
                 binding.pieChartLayout.visibility = View.GONE
             }
 
-            PieChartHelper.updateDataList(requireContext(), operations, money)
+            PieChartHelper.updateDataList(requireContext(), sortedOperations, money)
         }
     }
 
@@ -186,7 +188,7 @@ class StatisticExpense : Fragment() {
                 dateStart = dateStartText,
                 dateEnd = dateEndText,
                 operationTypes = arrayListOf(Constance.expense),
-                orderBy = "${DbTableOperation.COLUMN_NAME_MONEY} DESC"
+                orderBy = "${DbTableOperation.COLUMN_NAME_CATEGORY_UUID} DESC"
             )
         )
     }
