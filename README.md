@@ -1,6 +1,6 @@
 # FinMate / Finance tracker APP
 
-[Русский](#русский) | [English](#english)
+[English](#english) | [Русский](#русский) | [Screenshots](#screenshots) | [License](#license)
 
 ## English
 
