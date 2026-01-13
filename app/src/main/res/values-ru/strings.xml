@@ -148,4 +148,5 @@
     <string name="language_Eng">Английский</string>
     <string name="of">из</string>
     <string name="message_error_delete">Произошла ошибка при удалении</string>
+    <string name="version">Версия</string>
 </resources>

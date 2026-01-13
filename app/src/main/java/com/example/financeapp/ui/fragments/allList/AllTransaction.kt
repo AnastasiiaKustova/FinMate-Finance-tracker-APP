@@ -173,7 +173,6 @@ class AllTransaction : Fragment() {
 
     private fun setSettings() {
 
-        // Инициализируем настройки, если они пустые
         if (settingsViewModel.settings.value == null) {
             settingsViewModel.initIfEmpty(Settings.default())
         }
@@ -210,7 +209,9 @@ class AllTransaction : Fragment() {
 
             FilterChipFactory.addChips(
                 binding.chipGroupCategories,
-                settings.categoryIDs?.map { FilterChip(title = it.title, tag = it.UUID) }
+                settings.categoryIDs?.map {
+                    FilterChip(title = it.title, tag = it.UUID)
+                }
                     ?: emptyList(),
                 onRemove = { removedFilter ->
                     if (settings.categoryIDs?.map { FilterChip(title = it.title, tag = it.UUID) }

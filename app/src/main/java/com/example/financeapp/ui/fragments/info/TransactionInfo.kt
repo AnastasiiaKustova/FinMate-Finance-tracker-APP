@@ -57,13 +57,20 @@ class TransactionInfo() : Fragment() {
 
     private lateinit var watcher: MoneyTextWatcher
     private var selectedCategory: CategoryClass? = null
-    private lateinit var selectedType: String
-    private lateinit var stringNames : StringNames
+    private lateinit var stringNames: StringNames
     private var selectedDateMillis: Long? = null
     private var newCategory: CategoryClass? = null
     private var transactionDate: String = ""
 
     private var onlyRead: Boolean = false
+
+    val selectedType
+        get() = binding.operationSelector
+            .findViewById<RadioButton>(binding.operationSelector.checkedRadioButtonId)
+            ?.tag?.toString() ?: Constance.expense
+
+    val queryForCategory
+        get() = Query.defaultForCategory(selectedType)
 
     companion object {
         private const val ARG_TRANSACTION = "transaction"
@@ -108,30 +115,32 @@ class TransactionInfo() : Fragment() {
             } else {
                 transaction = transactionArg
 
-                selectedType = transaction.type
+                changeOperationType(transaction.type)
 
-                when (selectedType){
+                when (selectedType) {
                     Constance.admission -> {
                         binding.operationSelector.check(binding.admission.id)
                         binding.cardText.text = stringNames.CARD_TO
                     }
+
                     Constance.expense -> {
                         binding.operationSelector.check(binding.expense.id)
                         binding.cardText.text = stringNames.CARD_FROM
                     }
+
                     else -> onlyRead = true
                 }
 
                 setDate(transaction.date)
 
-                if (!onlyRead){
-                    val findCategory = categoryViewModel.findCategoryByUUID(transaction.categoryUUID)
+                if (!onlyRead) {
+                    val findCategory =
+                        categoryViewModel.findCategoryByUUID(transaction.categoryUUID)
                     if (findCategory == null)
                         selectedCategory = null
                     else
                         selectedCategory = findCategory
-                }
-                else selectedCategory = null
+                } else selectedCategory = null
 
             }
             sourceTag = it.getString(ARG_TAG)
@@ -150,6 +159,9 @@ class TransactionInfo() : Fragment() {
             initEditLayout()
         else
             initInfoLayout()
+
+        setCategories()
+        setCards()
     }
 
     private fun setupViewModels() {
@@ -170,14 +182,12 @@ class TransactionInfo() : Fragment() {
             requireContext(),
             ViewModelType.CARD
         )
-
-        setCategories()
-        setCards()
     }
 
     private fun setCategories() {
         categoryViewModel.categories.observe(viewLifecycleOwner) { categories ->
-            updateCategories(categories)
+            if (categories.all { it.typeOperation == selectedType })
+                updateCategories(categories)
         }
         loadCategories()
     }
@@ -204,8 +214,10 @@ class TransactionInfo() : Fragment() {
         ) { _, bundle ->
             val categoryUUID = bundle.getString(KEY_CATEGORY_UUID) ?: ""
             newCategory = categoryViewModel.findCategoryByUUID(categoryUUID)
-            if (newCategory?.typeOperation != selectedType)
+            if (newCategory?.typeOperation != selectedType){
                 changeOperationType(newCategory?.typeOperation)
+                loadCategories()
+            }
         }
 
         parentFragmentManager.setFragmentResultListener(
@@ -238,6 +250,7 @@ class TransactionInfo() : Fragment() {
                         .addToBackStack(null)
                         .commit()
                 }
+
                 stringNames.MORE_TITLE -> {
                     selectedType?.let {
                         val fragment = CategoriesSelector.newInstance(category, it, MORE_TAG)
@@ -247,6 +260,7 @@ class TransactionInfo() : Fragment() {
                         )
                     }
                 }
+
                 else -> {
                     selectedCategory = category
                     adapter.setSelectedPosition(position)
@@ -271,26 +285,25 @@ class TransactionInfo() : Fragment() {
             else
                 category.text = stringNames.NOT_FOUND
 
-            type.text = when(transaction.type){
+            type.text = when (transaction.type) {
                 Constance.minus, Constance.plus -> stringNames.TRANSFERS
                 Constance.admission -> stringNames.ADMISSION_OP
                 Constance.expense -> stringNames.EXPENSE_OP
                 else -> transaction.type
             }
 
-            when (transaction.type){
-                Constance.minus ->{
+            when (transaction.type) {
+                Constance.minus -> {
                     categoryLayout.visibility = View.GONE
-                    if (transaction.cardToName.isNotEmpty())
-                    {
+                    if (transaction.cardToName.isNotEmpty()) {
                         cardToLayout.visibility = View.VISIBLE
                         cardTo.text = transaction.cardToName
-                    }
-                    else
+                    } else
                         cardToLayout.visibility = View.GONE
 
                 }
-                else ->{
+
+                else -> {
                     cardToLayout.visibility = View.GONE
                     categoryLayout.visibility = View.VISIBLE
                 }
@@ -301,7 +314,7 @@ class TransactionInfo() : Fragment() {
             else
                 comment.text = stringNames.NO_COMMENT_TEXT
 
-            if (onlyRead){
+            if (onlyRead) {
                 editOrDeleteBtn.visibility = View.INVISIBLE
                 category.text = "-"
             } else
@@ -353,20 +366,20 @@ class TransactionInfo() : Fragment() {
 
             editDateText.setOnClickListener { showDatePicker() }
             icCalendar.setOnClickListener { showDatePicker() }
-            expense.setOnClickListener { changeOperationType() }
-            admission.setOnClickListener { changeOperationType() }
+            expense.setOnClickListener { changeOperationType(); loadCategories()}
+            admission.setOnClickListener { changeOperationType(); loadCategories()}
         }
     }
 
-    private fun delete(){
+    private fun delete() {
         if (transaction.type == Constance.minus) {
             val query = Query.queryForDeletedCard(transaction)
-            if (query == null){
+            if (query == null) {
                 showToast(stringNames.MESSAGE_ERROR_DELETE)
                 return
             }
             val operations = operationViewModel.getTransactions(query)
-            if (operations.isEmpty()){
+            if (operations.isEmpty()) {
                 showToast(stringNames.MESSAGE_ERROR_DELETE)
                 return
             }
@@ -414,7 +427,7 @@ class TransactionInfo() : Fragment() {
         val money = watcher.getValue()
 
         return when {
-            selectedCategory == null ->{
+            selectedCategory == null -> {
                 ToastHelper.show(requireContext(), stringNames.MESSAGE_NO_CATEGORY); false
             }
 
@@ -462,7 +475,7 @@ class TransactionInfo() : Fragment() {
         pickerHelper.show()
     }
 
-    private fun setDate(date: String, dateMillis: Long? = null){
+    private fun setDate(date: String, dateMillis: Long? = null) {
         selectedDateMillis = dateMillis ?: DateUtils.parseDateToMillis(date)
         transactionDate = date
 
@@ -470,28 +483,23 @@ class TransactionInfo() : Fragment() {
         binding.date.text = DateUtils.dateSQLtoString(date)
     }
 
-    private fun loadCategories(){
-        selectedType = binding.operationSelector
-            .findViewById<RadioButton>(binding.operationSelector.checkedRadioButtonId)
-            ?.tag?.toString() ?: Constance.expense
+    private fun loadCategories() {
 
-        val query = Query.defaultForCategory(selectedType)
-        categoryViewModel.loadData(query)
+        categoryViewModel.loadData(queryForCategory)
     }
 
-    private fun changeOperationType(newSelectType: String? = null){
+    private fun changeOperationType(newSelectType: String? = null) {
 
-        if (newSelectType != null){
+        if (newSelectType != null) {
             if (newSelectType == Constance.expense)
                 binding.expense.setChecked(true)
             else
                 binding.admission.setChecked(true)
         }
 
-        loadCategories()
     }
 
-    private fun updateCategories(categories: List<CategoryClass>){
+    private fun updateCategories(categories: List<CategoryClass>) {
         selectedCategory = CategoryUiMapper.updateCategories(
             context = requireContext(),
             adapter = adapter,

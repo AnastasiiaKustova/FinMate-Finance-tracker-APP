@@ -31,7 +31,7 @@ class StatisticAdmissionAdapter(private var items: List<OperationClassWithDate>,
                 itemsList.adapter = innerAdapter
             }
 
-            innerAdapter.updateData(itemOperation.dataList)
+            innerAdapter.updateData(itemOperation.dataList.sortedBy { it.date })
             innerAdapter.updateCategories(categories)
             innerAdapter.updateCards(cards)
 

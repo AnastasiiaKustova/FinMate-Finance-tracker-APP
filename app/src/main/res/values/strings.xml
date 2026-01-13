@@ -93,6 +93,7 @@
     <string name="visibility_btn">Toggle visibility</string>
     <string name="apply_btn">Apply</string>
     <string name="clear_btn">Clear</string>
+    <string name="version">Version</string>
     <string name="no_description" translatable="false"> </string>
     <string name="currency" translatable="false">$</string>
     <string name="expenseTitle">Expense</string>

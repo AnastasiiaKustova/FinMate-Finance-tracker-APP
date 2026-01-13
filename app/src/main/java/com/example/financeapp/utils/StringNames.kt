@@ -1,6 +1,7 @@
 package com.example.financeapp.utils
 
 import android.content.Context
+import android.os.Build.VERSION
 import com.example.financeapp.R
 
 class StringNames(context: Context) {
@@ -20,6 +21,7 @@ class StringNames(context: Context) {
     val TRANSFERS = context.getString(R.string.transfers)
 
     val ALL_CATEGORIES = context.getString(R.string.all_category)
+    val VERSION = context.getString(R.string.version)
 
     val MESSAGE_NO_TITLE = context.getString(R.string.message_no_title)
     val MESSAGE_NO_TYPE = context.getString(R.string.message_no_type)

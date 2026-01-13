@@ -102,7 +102,6 @@ class SettingsQueryBuilder(private val settings: Settings, private val context: 
         )
         val args = mutableListOf(settings.dateStart, settings.dateEnd)
 
-        // Включаем только выбранные типы (OR внутри скобок)
         settings.operationTypes?.takeIf { it.isNotEmpty() }?.let { list ->
             val subConditions = mutableListOf<String>()
             for (operationType in list) {
@@ -121,7 +120,6 @@ class SettingsQueryBuilder(private val settings: Settings, private val context: 
             }
         }
 
-        // Исключаем типы (OR внутри, но всё это в AND)
         settings.operationTypesExclude?.takeIf { it.isNotEmpty() }?.let { list ->
             val subConditions = mutableListOf<String>()
             for (operationType in list) {
@@ -140,7 +138,6 @@ class SettingsQueryBuilder(private val settings: Settings, private val context: 
             }
         }
 
-        // Исключаем типы (OR внутри, но всё это в AND)
         settings.categoryIDs?.takeIf { it.isNotEmpty() }?.let { list ->
             val subConditions = mutableListOf<String>()
             for (categoryUUID in list) {

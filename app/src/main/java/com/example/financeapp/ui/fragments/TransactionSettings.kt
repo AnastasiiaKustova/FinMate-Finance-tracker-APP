@@ -139,7 +139,7 @@ class TransactionSettings : BottomSheetDialogFragment() {
 
             adapterCategories.updateItems(categories.map {
                 SettingsItemClass(
-                    it.id.toString(),
+                    it.UUID,
                     it.title,
                     it.title
                 )
@@ -158,9 +158,9 @@ class TransactionSettings : BottomSheetDialogFragment() {
                 )
 
             val layoutManagerTypes = FlexboxLayoutManager(requireContext()).apply {
-                flexDirection = FlexDirection.ROW          // элементы идут в строку
-                flexWrap = FlexWrap.WRAP                   // перенос на новую строку
-                justifyContent = JustifyContent.FLEX_START // выравнивание слева
+                flexDirection = FlexDirection.ROW
+                flexWrap = FlexWrap.WRAP
+                justifyContent = JustifyContent.FLEX_START
             }
 
             adapterTypes = SettingsAdapter(typesList)
@@ -172,9 +172,9 @@ class TransactionSettings : BottomSheetDialogFragment() {
             }
 
             val layoutManagerCategories = FlexboxLayoutManager(requireContext()).apply {
-                flexDirection = FlexDirection.ROW          // элементы идут в строку
-                flexWrap = FlexWrap.WRAP                   // перенос на новую строку
-                justifyContent = JustifyContent.FLEX_START // выравнивание слева
+                flexDirection = FlexDirection.ROW
+                flexWrap = FlexWrap.WRAP
+                justifyContent = JustifyContent.FLEX_START
             }
 
             adapterCategories = SettingsAdapter(emptyList())

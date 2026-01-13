@@ -59,6 +59,14 @@ With clear charts, detailed history, and flexible customization, you always know
    - Home screen shows your total balance, balances per account, and recent transactions  
    - Full history: filter by period, type (income/expense), or category  
 
+## Screenshots
+![Analytics](https://github.com/AnastasiiaKustova/FinMate-Finance-tracker-APP/blob/master/screenshots/ru/Analytics.png)
+![Flexibility](https://github.com/AnastasiiaKustova/FinMate-Finance-tracker-APP/blob/master/screenshots/ru/Flexibility.png)
+![Planning](https://github.com/AnastasiiaKustova/FinMate-Finance-tracker-APP/blob/master/screenshots/ru/Planning.png)
+![Monitoring](https://github.com/AnastasiiaKustova/FinMate-Finance-tracker-APP/blob/master/screenshots/ru/Monitoring.png)
+![Visibility](https://github.com/AnastasiiaKustova/FinMate-Finance-tracker-APP/blob/master/screenshots/ru/Visibility.png)
+![Controllability](https://github.com/AnastasiiaKustova/FinMate-Finance-tracker-APP/blob/master/screenshots/ru/Controllability.png)
+
 ## License
 This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License.
 See the [LICENSE](LICENSE) file for details.

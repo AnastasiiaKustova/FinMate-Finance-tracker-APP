@@ -31,6 +31,8 @@ class CategoryViewModel(
     private val _categoryCreatedUUID = MutableLiveData<String?>()
     val categoryCreatedUUID: LiveData<String?> = _categoryCreatedUUID
 
+    fun getQuery():Query = categoryRepository.query_
+
     fun loadData(query: Query) {
         //_categories.value = emptyList()
         categoryRepository.setQuery(query)
