@@ -60,12 +60,14 @@ With clear charts, detailed history, and flexible customization, you always know
    - Full history: filter by period, type (income/expense), or category  
 
 ## Screenshots
-![Analytics](https://github.com/AnastasiiaKustova/FinMate-Finance-tracker-APP/blob/master/screenshots/ru/Analytics.png)
-![Flexibility](https://github.com/AnastasiiaKustova/FinMate-Finance-tracker-APP/blob/master/screenshots/ru/Flexibility.png)
-![Planning](https://github.com/AnastasiiaKustova/FinMate-Finance-tracker-APP/blob/master/screenshots/ru/Planning.png)
-![Monitoring](https://github.com/AnastasiiaKustova/FinMate-Finance-tracker-APP/blob/master/screenshots/ru/Monitoring.png)
-![Visibility](https://github.com/AnastasiiaKustova/FinMate-Finance-tracker-APP/blob/master/screenshots/ru/Visibility.png)
-![Controllability](https://github.com/AnastasiiaKustova/FinMate-Finance-tracker-APP/blob/master/screenshots/ru/Controllability.png)
+<div style="display: flex; overflow-x: auto; white-space: nowrap;">
+  <img src="https://github.com/AnastasiiaKustova/FinMate-Finance-tracker-APP/blob/master/screenshots/ru/Analytics.png" alt="Analytics" style="height: 150px; margin-right: 10px;">
+  <img src="https://github.com/AnastasiiaKustova/FinMate-Finance-tracker-APP/blob/master/screenshots/ru/Flexibility.png" alt="Flexibility" style="height: 150px; margin-right: 10px;">
+  <img src="https://github.com/AnastasiiaKustova/FinMate-Finance-tracker-APP/blob/master/screenshots/ru/Planning.png" alt="Planning" style="height: 150px; margin-right: 10px;">
+  <img src="https://github.com/AnastasiiaKustova/FinMate-Finance-tracker-APP/blob/master/screenshots/ru/Monitoring.png" alt="Monitoring" style="height: 150px; margin-right: 10px;">
+  <img src="https://github.com/AnastasiiaKustova/FinMate-Finance-tracker-APP/blob/master/screenshots/ru/Visibility.png" alt="Visibility" style="height: 150px; margin-right: 10px;">
+  <img src="https://github.com/AnastasiiaKustova/FinMate-Finance-tracker-APP/blob/master/screenshots/ru/Controllability.png" alt="Controllability" style="height: 150px; margin-right: 10px;">
+</div>
 
 ## License
 This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License.
