@@ -61,12 +61,12 @@ With clear charts, detailed history, and flexible customization, you always know
 
 ## Screenshots
 <div style="display: flex; overflow-x: auto; white-space: nowrap;">
-  <img src="https://github.com/AnastasiiaKustova/FinMate-Finance-tracker-APP/blob/master/screenshots/ru/Analytics.png" alt="Analytics" style="height: 150px; margin-right: 10px;">
-  <img src="https://github.com/AnastasiiaKustova/FinMate-Finance-tracker-APP/blob/master/screenshots/ru/Flexibility.png" alt="Flexibility" style="height: 150px; margin-right: 10px;">
-  <img src="https://github.com/AnastasiiaKustova/FinMate-Finance-tracker-APP/blob/master/screenshots/ru/Planning.png" alt="Planning" style="height: 150px; margin-right: 10px;">
-  <img src="https://github.com/AnastasiiaKustova/FinMate-Finance-tracker-APP/blob/master/screenshots/ru/Monitoring.png" alt="Monitoring" style="height: 150px; margin-right: 10px;">
-  <img src="https://github.com/AnastasiiaKustova/FinMate-Finance-tracker-APP/blob/master/screenshots/ru/Visibility.png" alt="Visibility" style="height: 150px; margin-right: 10px;">
-  <img src="https://github.com/AnastasiiaKustova/FinMate-Finance-tracker-APP/blob/master/screenshots/ru/Controllability.png" alt="Controllability" style="height: 150px; margin-right: 10px;">
+  <img src="https://github.com/AnastasiiaKustova/FinMate-Finance-tracker-APP/blob/master/screenshots/ru/Analytics.png" alt="Analytics" style="height: 450px; margin-right: 10px;">
+  <img src="https://github.com/AnastasiiaKustova/FinMate-Finance-tracker-APP/blob/master/screenshots/ru/Flexibility.png" alt="Flexibility" style="height: 450px; margin-right: 10px;">
+  <img src="https://github.com/AnastasiiaKustova/FinMate-Finance-tracker-APP/blob/master/screenshots/ru/Planning.png" alt="Planning" style="height: 450px; margin-right: 10px;">
+  <img src="https://github.com/AnastasiiaKustova/FinMate-Finance-tracker-APP/blob/master/screenshots/ru/Monitoring.png" alt="Monitoring" style="height: 450px; margin-right: 10px;">
+  <img src="https://github.com/AnastasiiaKustova/FinMate-Finance-tracker-APP/blob/master/screenshots/ru/Visibility.png" alt="Visibility" style="height: 450px; margin-right: 10px;">
+  <img src="https://github.com/AnastasiiaKustova/FinMate-Finance-tracker-APP/blob/master/screenshots/ru/Controllability.png" alt="Controllability" style="height: 450px; margin-right: 10px;">
 </div>
 
 ## License
